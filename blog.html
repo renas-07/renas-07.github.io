@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rena's Portfolio | Contact</title>
+    <title>Rena's Portfolio | Blog</title>
     <link rel="stylesheet" href="renas-portfolio.css">
 </head>
 <body>
@@ -14,35 +14,55 @@
             <nav>
                 <ul>
                     <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
                     <li><a href="about.html" class="nav-link">About Me</a></li>
-                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="blog.html" class="nav-link active">Blog</a></li>
                     <li><a href="projects.html" class="nav-link">Projects</a></li>
                 </ul>
             </nav>
-            <a href="contact.jpn.html" class="lang-toggle">JPN</a>
+            <a href="blog.jpn.html" class="lang-toggle">JPN</a>
         </div>
     </header>
 
     <!-- Main Content -->
     <main>
         <section class="page active">
-            <div class="contact-content">
-                <h2>Wanna learn more about me?<br>Contact me <span>here</span>!</h2>
-                <div class="contact-email">
-                    <a href="mailto:xxxxx@gmail.com">xxxxx@gmail.com</a>
+            <div class="blog-content">
+                <h2>Blog</h2>
+                <div class="blog-grid">
+                    <article class="blog-card">
+                        <div class="blog-card-image">🐱</div>
+                        <div class="blog-card-content">
+                            <h3>Owning a Cat in Tokyo</h3>
+                            <p>The joys and challenges of owning a cat in a Tokyo apartment. From finding pet-friendly housing to tips for urban cat life.</p>
+                            <p class="date">2024.03.15</p>
+                        </div>
+                    </article>
+                    <article class="blog-card">
+                        <div class="blog-card-image">💻</div>
+                        <div class="blog-card-content">
+                            <h3>Become an Engineer with No IT Experience</h3>
+                            <p>My journey from zero IT experience to becoming a Cloud Engineer. Tips on certifications and effective learning methods.</p>
+                            <p class="date">2024.02.28</p>
+                        </div>
+                    </article>
+                    <article class="blog-card">
+                        <div class="blog-card-image">🌏</div>
+                        <div class="blog-card-content">
+                            <h3>Life as a Bilingual Engineer</h3>
+                            <p>Working in global teams as a bilingual professional. How language skills enhance your tech career.</p>
+                            <p class="date">2024.01.10</p>
+                        </div>
+                    </article>
+                    <article class="blog-card">
+                        <div class="blog-card-image">☁️</div>
+                        <div class="blog-card-content">
+                            <h3>Getting Started with AWS Cloud</h3>
+                            <p>A beginner's guide to AWS. Essential services to learn first and practical learning resources.</p>
+                            <p class="date">2023.12.05</p>
+                        </div>
+                    </article>
                 </div>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label for="title">Title</label>
-                        <input type="text" id="title" name="title">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message"></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send</button>
-                </form>
             </div>
         </section>
     </main>
@@ -67,7 +87,7 @@
             </a>
         </div>
         <div class="footer-lang">
-            <a href="contact.jpn.html" class="lang-toggle">JPN</a>
+            <a href="blog.jpn.html" class="lang-toggle">JPN</a>
         </div>
         <p class="copyright">&copy; 2024 Rena. All rights reserved.</p>
     </footer>

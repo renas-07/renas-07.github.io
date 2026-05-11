@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rena's Portfolio | Contact</title>
+    <title>Rena's Portfolio | Projects</title>
     <link rel="stylesheet" href="renas-portfolio.css">
 </head>
 <body>
@@ -14,35 +14,53 @@
             <nav>
                 <ul>
                     <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
                     <li><a href="about.html" class="nav-link">About Me</a></li>
                     <li><a href="blog.html" class="nav-link">Blog</a></li>
-                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="projects.html" class="nav-link active">Projects</a></li>
                 </ul>
             </nav>
-            <a href="contact.jpn.html" class="lang-toggle">JPN</a>
+            <a href="projects.jpn.html" class="lang-toggle">JPN</a>
         </div>
     </header>
 
     <!-- Main Content -->
     <main>
         <section class="page active">
-            <div class="contact-content">
-                <h2>Wanna learn more about me?<br>Contact me <span>here</span>!</h2>
-                <div class="contact-email">
-                    <a href="mailto:xxxxx@gmail.com">xxxxx@gmail.com</a>
+            <div class="projects-content">
+                <h2>Projects</h2>
+
+                <div class="projects-section">
+                    <h3>Marketing Projects</h3>
+                    <div class="project-grid">
+                        <div class="project-card marketing">
+                            <h4>Hosted a Halloween Party in my hometown for 150 people</h4>
+                            <p>Details and images coming soon</p>
+                        </div>
+                        <div class="project-card marketing">
+                            <h4>Planned and presented a PR Campaign project for ScottsMiracle-Gro</h4>
+                            <p>Details and images coming soon</p>
+                        </div>
+                    </div>
                 </div>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label for="title">Title</label>
-                        <input type="text" id="title" name="title">
+
+                <div class="projects-section">
+                    <h3>Tech Projects</h3>
+                    <div class="project-grid">
+                        <div class="project-card">
+                            <h4>Worked directly with clients to set up a 3-Tier Architecture using CloudFormation</h4>
+                            <p>Details and images coming soon</p>
+                        </div>
+                        <div class="project-card">
+                            <h4>Improved architecture visibility by using Terraform to create 100 CloudWatch alarms for servers</h4>
+                            <p>Details and images coming soon</p>
+                        </div>
+                        <div class="project-card">
+                            <h4>Ran a Solutions Architect project to colleagues in a real-life setting</h4>
+                            <p>Details and images coming soon</p>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message"></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send</button>
-                </form>
+                </div>
             </div>
         </section>
     </main>
@@ -67,7 +85,7 @@
             </a>
         </div>
         <div class="footer-lang">
-            <a href="contact.jpn.html" class="lang-toggle">JPN</a>
+            <a href="projects.jpn.html" class="lang-toggle">JPN</a>
         </div>
         <p class="copyright">&copy; 2024 Rena. All rights reserved.</p>
     </footer>
