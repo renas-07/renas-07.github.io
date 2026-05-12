@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Munchies Bunch</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .poster {
+      width: 100%;
+      max-width: 420px;
+      background: #ffffff;
+      padding: 30px 25px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Decorative background dots */
+    .dot {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.4;
+      z-index: 0;
+    }
+    .dot-yellow { background: #FFD93D; }
+    .dot-pink { background: #FF6B9D; }
+    .dot-teal { background: #4ECDC4; }
+    .dot-green { background: #95E77E; }
+
+    .dot-1 { width: 18px; height: 18px; top: 8px; left: 12px; }
+    .dot-2 { width: 10px; height: 10px; top: 25px; right: 30px; }
+    .dot-3 { width: 14px; height: 14px; top: 60px; left: 45%; }
+    .dot-4 { width: 8px; height: 8px; top: 140px; right: 8px; }
+    .dot-5 { width: 12px; height: 12px; top: 200px; left: 30%; }
+    .dot-6 { width: 16px; height: 16px; top: 280px; right: 12px; }
+    .dot-7 { width: 10px; height: 10px; top: 320px; left: 60%; }
+    .dot-8 { width: 14px; height: 14px; top: 380px; left: 8px; }
+    .dot-9 { width: 8px; height: 8px; top: 420px; left: 40%; }
+    .dot-10 { width: 12px; height: 12px; top: 480px; right: 35%; }
+    .dot-11 { width: 10px; height: 10px; top: 540px; right: 10px; }
+    .dot-12 { width: 16px; height: 16px; bottom: 80px; left: 25%; }
+    .dot-13 { width: 10px; height: 10px; top: 100px; left: 15%; }
+    .dot-14 { width: 14px; height: 14px; top: 240px; right: 30%; }
+    .dot-15 { width: 8px; height: 8px; top: 350px; left: 20%; }
+    .dot-16 { width: 12px; height: 12px; top: 450px; right: 15%; }
+    .dot-17 { width: 16px; height: 16px; bottom: 40px; right: 25%; }
+    .dot-18 { width: 10px; height: 10px; bottom: 20px; left: 50%; }
+
+
+
+
+
+
+    /* Images row */
+    .images-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      padding: 0 10px;
+    }
+
+    .image-card {
+      position: relative;
+      border-radius: 10%;
+      overflow: hidden;
+      width: 120px;
+      height: 120px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .image-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .image-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.7));
+      color: #fff;
+      padding: 20px 10px 8px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* Header section */
+    .header {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .title {
+      font-size: 90px;
+      font-weight: 800;
+      font-family: Blipio, fantasy;
+      letter-spacing: 3px;
+      color: #fd547e;
+      line-height: 0.8;
+      /* border: 2px dotted greenyellow;
+      border-radius: 10; */
+      text-shadow: 0 0 20px gray;
+    }
+
+    .title span {
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .date-time {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+
+    .date-badge, .time-badge {
+      background: #FFD93D;
+      padding: 8px 18px;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #2D2D2D;
+    }
+
+    .time-badge {
+      background: #FF6B9D;
+      color: #fff;
+    }
+
+    /* Caption */
+    .caption {
+      text-align: center;
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    /* Highlights */
+    .highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .highlight-box {
+      background: #4ECDC4;
+      color: #fff;
+      padding: 12px 10px;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .highlight-box.alt {
+      background: #95E77E;
+      color: #2D2D2D;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    /* Details */
+    .details {
+      background: #F8F8F8;
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .detail-row {
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      color: #444;
+    }
+
+    .detail-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .detail-label {
+      font-weight: 600;
+      color: #2D2D2D;
+    }
+
+    .fee {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #FF6B9D;
+      margin-top: 10px;
+    }
+
+    /* .registration-link {
+      position: relative;
+      border-radius: 10%;
+      overflow: hidden;
+      width: 120px;
+      height: 120px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    } */
+
+    .registration-link img {
+      width: 60px;
+      height: 60px;
+    }
+
+    .link {
+      font-size: 10px;
+    }
+
+    /* Print styles for PDF */
+    @media print {
+      body {
+        padding: 0;
+      }
+      .poster {
+        max-width: 100%;
+        padding: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="poster">
+    <!-- Decorative dots -->
+    <div class="dot dot-1 dot-yellow"></div>
+    <div class="dot dot-2 dot-pink"></div>
+    <div class="dot dot-3 dot-teal"></div>
+    <div class="dot dot-4 dot-green"></div>
+    <div class="dot dot-5 dot-pink"></div>
+    <div class="dot dot-6 dot-yellow"></div>
+    <div class="dot dot-7 dot-teal"></div>
+    <div class="dot dot-8 dot-green"></div>
+    <div class="dot dot-9 dot-yellow"></div>
+    <div class="dot dot-10 dot-pink"></div>
+    <div class="dot dot-11 dot-teal"></div>
+    <div class="dot dot-12 dot-green"></div>
+    <div class="dot dot-13 dot-yellow"></div>
+    <div class="dot dot-14 dot-pink"></div>
+    <div class="dot dot-15 dot-teal"></div>
+    <div class="dot dot-16 dot-green"></div>
+    <div class="dot dot-17 dot-yellow"></div>
+    <div class="dot dot-18 dot-pink"></div>
+
+    <!-- Header -->
+    <div class="header">
+      <div class="date-time">
+        <span class="date-badge">Saturday, June 13</span>
+        <span class="time-badge">19:30 ~ 21:30</span>
+      </div><br>
+      <h1 class="title">
+        <span>Munchies</span>
+        <span>Bunch</span>
+      </h1>
+    </div>
+
+    <!-- Caption -->
+    <p class="caption">Let's try Banana Art and munch into your Favorite Snacks and Drinks!</p>
+
+    <div class="images-row">
+      <div class="image-card">
+        <img src="banana-art.jpg" alt="Banana Art">
+        <div class="image-label">Banana Art</div>
+      </div>
+      <div class="image-card">
+        <img src="nachos.jpg" alt="Nachos Table">
+        <div class="image-label">Nachos Table</div>
+      </div>
+      <div class="image-card">
+        <img src="chocolate-fondue.jpg" alt="Chocolate Fondue">
+        <div class="image-label">Fondue</div>
+      </div>
+      <div class="image-card">
+        <img src="bingo.jpg" alt="Bingo">
+        <div class="image-label">Bingo</div>
+      </div>
+    </div>
+
+    <!-- Highlights -->
+    <div class="highlights">
+      <!-- <div class="highlight-box">FREE Drinks including alcohol</div> -->
+      <div class="highlight-box">
+When: Saturday, June 13th, 19:30~21:30
+<br>Where: YOYO代々木
+<br>Fee: 3000 yen per person
+<br>※Registration closes at 30 people</div>
+      <div class="highlight-box alt"><a href="https://docs.google.com/forms/d/e/1FAIpQLScOKaTSavjRAORHp-8iWGs1SAgPvZwJQJoDzVXyduoGOAXVcw/viewform?usp=header">Fill out this form <br> to register!</a>
+        <div class="registration-link"><img src="registration-link.png" alt="https://docs.google.com/forms/d/e/1FAIpQLScOKaTSavjRAORHp-8iWGs1SAgPvZwJQJoDzVXyduoGOAXVcw/viewform?usp=header">
+        </div>
+    </div>
+</body>
+</html>
